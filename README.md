@@ -3,9 +3,9 @@
 > 基于 WiFi + AI 的多模态环境感知可动桌面陪伴系统  
 > 情绪价值为主，轻度效率为辅 —— 懂你的桌面搭子
 
-[![GitHub](https://img.shields.io/badge/GitHub-Desktop--terminal--assistant-181717?logo=github)](https://github.com/GZXchina/Desktop-terminal-assistant)
-[![RuoYi](https://img.shields.io/badge/RuoYi-Vue-3.9.2-brightgreen)](https://gitee.com/y_project/RuoYi-Vue)
-[![UniApp](https://img.shields.io/badge/UniApp-1.2.0-42b983)](https://uniapp.dcloud.net.cn/)
+[GitHub](https://github.com/GZXchina/Desktop-terminal-assistant)
+[RuoYi](https://gitee.com/y_project/RuoYi-Vue)
+[UniApp](https://uniapp.dcloud.net.cn/)
 
 ---
 
@@ -15,12 +15,14 @@
 
 本仓库是完整的软件工程载体，包含：
 
-| 层级 | 目录 | 说明 |
-|------|------|------|
-| 移动端 | `RuoYi-App/` | 微信小程序 / APP 控制中枢（设备、记忆、看板、企业报表） |
-| 后端中台 | `RuoYi-Vue-master/` | 用户、权限、设备、记忆等业务 API（基于若依） |
-| AI 工程规范 | `skills/` | Architect Sage 思维技能库，指导 AI 辅助开发与架构决策 |
-| 产品与架构文档 | 根目录 `*.md` | PRD、SD、技术文档、开发范式等 |
+
+| 层级      | 目录                  | 说明                                   |
+| ------- | ------------------- | ------------------------------------ |
+| 移动端     | `RuoYi-App/`        | 微信小程序 / APP 控制中枢（设备、记忆、看板、企业报表）      |
+| 后端中台    | `RuoYi-Vue-master/` | 用户、权限、设备、记忆等业务 API（基于若依）             |
+| AI 工程规范 | `skills/`           | Architect Sage 思维技能库，指导 AI 辅助开发与架构决策 |
+| 产品与架构文档 | 根目录 `*.md`          | PRD、SD、技术文档、开发范式等                    |
+
 
 ---
 
@@ -43,11 +45,13 @@
 
 ### 交互哲学：主动应答三元式
 
-| 要素 | 说明 |
-|------|------|
-| 环境触发 | 基于传感器判断用户状态（如久坐提醒） |
-| 记忆共鸣 | 结合历史记忆做个性化回应 |
+
+| 要素   | 说明                  |
+| ---- | ------------------- |
+| 环境触发 | 基于传感器判断用户状态（如久坐提醒）  |
+| 记忆共鸣 | 结合历史记忆做个性化回应        |
 | 克制表达 | 按打扰风险分级，专注时静默、休闲时主动 |
+
 
 ---
 
@@ -82,18 +86,22 @@ flowchart TB
     API --> MEM
 ```
 
+
+
 ---
 
 ## 技术栈
 
-| 类别 | 技术 |
-|------|------|
-| 移动端 | UniApp、Vue 2、Vuex、uni-ui、SCSS |
-| 管理后台 | Vue 2、Element UI、Vue CLI |
-| 后端 | Spring Boot 4、Spring Security、MyBatis、JWT、Redis |
-| 数据库 | MySQL（脚本见 `RuoYi-Vue-master/sql/`） |
-| 硬件平台 | ESP32-S3（双核 240MHz，详见技术文档） |
-| 开发方法 | 文档驱动 + 技术验证前置 + AI 辅助（见开发范式文档） |
+
+| 类别   | 技术                                              |
+| ---- | ----------------------------------------------- |
+| 移动端  | UniApp、Vue 2、Vuex、uni-ui、SCSS                   |
+| 管理后台 | Vue 2、Element UI、Vue CLI                        |
+| 后端   | Spring Boot 4、Spring Security、MyBatis、JWT、Redis |
+| 数据库  | MySQL（脚本见 `RuoYi-Vue-master/sql/`）              |
+| 硬件平台 | ESP32-S3（双核 240MHz，详见技术文档）                      |
+| 开发方法 | 文档驱动 + 技术验证前置 + AI 辅助（见开发范式文档）                  |
+
 
 ---
 
@@ -118,8 +126,35 @@ flowchart TB
 ├── 工位搭子_UniApp平台_PRD(1).md   # 移动端产品需求
 ├── 工位搭子_UniApp平台_SD.md       # 移动端软件设计
 ├── 开发范式_SaaS_基于Ruoyi.md      # 团队开发流程与文档规范
+├── demo/                         # 项目交互演示（Web + 说明）
+│   ├── index.html                # 浏览器端 Demo（无需后端）
+│   └── start-demo.ps1            # 一键打开 Demo
 └── tech_scheme.md                # Architect Sage 技术方案摘要
 ```
+
+---
+
+## 项目 Demo
+
+无需部署后端即可体验核心功能：
+
+### Web 演示（最快）
+
+```powershell
+# 双击或在项目根目录执行
+.\demo\start-demo.ps1
+```
+
+浏览器将打开交互式 Demo，包含：**门户导航 · 环境看板 · 设备遥控 · 记忆时光 · 企业报表**，数据每 5 秒自动刷新。
+
+### 移动端演示
+
+1. HBuilderX 打开 `RuoYi-App/`
+2. 确认 `config.js` 中 `demoMode: true`（默认已开启）
+3. 运行到模拟器 / 微信开发者工具
+4. 登录页点击 **「体验 Demo（免后端）」**
+
+详见 [demo/README.md](./demo/README.md)。
 
 ---
 
@@ -127,14 +162,16 @@ flowchart TB
 
 ### 环境要求
 
-| 组件 | 版本建议 |
-|------|----------|
-| JDK | 17+ |
-| Maven | 3.6+ |
-| Node.js | 14+（管理后台 / 移动端构建） |
-| MySQL | 5.7+ / 8.0 |
-| Redis | 5.0+ |
+
+| 组件        | 版本建议                |
+| --------- | ------------------- |
+| JDK       | 17+                 |
+| Maven     | 3.6+                |
+| Node.js   | 14+（管理后台 / 移动端构建）   |
+| MySQL     | 5.7+ / 8.0          |
+| Redis     | 5.0+                |
 | HBuilderX | 最新版（UniApp 开发与真机调试） |
+
 
 ### 1. 数据库
 
@@ -169,9 +206,9 @@ npm run dev
 
 ### 4. 移动端（RuoYi-App）
 
-1. 使用 HBuilderX 打开 `RuoYi-App/` 目录  
-2. 在 `config.js` 中配置后端 API 地址  
-3. 运行到微信开发者工具或真机调试  
+1. 使用 HBuilderX 打开 `RuoYi-App/` 目录
+2. 在 `config.js` 中配置后端 API 地址
+3. 运行到微信开发者工具或真机调试
 
 业务入口：**首页看板** → **工作台** → 设备控制台 / 记忆时光 / 团队报表。
 
@@ -179,14 +216,16 @@ npm run dev
 
 ## 文档导航
 
-| 文档 | 内容 |
-|------|------|
-| [工位搭子_技术文档_v4_整理版.md](./工位搭子_技术文档_v4_整理版.md) | 硬件架构、软件架构、核心模块、竞品与规划 |
-| [工位搭子_UniApp平台_PRD(1).md](./工位搭子_UniApp平台_PRD(1).md) | 移动端功能需求、用户场景、验收标准 |
-| [工位搭子_UniApp平台_SD.md](./工位搭子_UniApp平台_SD.md) | 移动端架构、数据、接口与安全设计 |
-| [开发范式_SaaS_基于Ruoyi.md](./开发范式_SaaS_基于Ruoyi.md) | 文档驱动开发流程、AI Prompt 规范 |
-| [tech_scheme.md](./tech_scheme.md) | Architect Sage 框架与 skills 说明 |
-| [RuoYi-Vue 官方文档](http://doc.ruoyi.vip) | 若依框架使用说明 |
+
+| 文档                                                   | 内容                           |
+| ---------------------------------------------------- | ---------------------------- |
+| [工位搭子_技术文档_v4_整理版.md](./工位搭子_技术文档_v4_整理版.md)         | 硬件架构、软件架构、核心模块、竞品与规划         |
+| [工位搭子_UniApp平台_PRD(1).md](./工位搭子_UniApp平台_PRD(1).md) | 移动端功能需求、用户场景、验收标准            |
+| [工位搭子_UniApp平台_SD.md](./工位搭子_UniApp平台_SD.md)         | 移动端架构、数据、接口与安全设计             |
+| [开发范式_SaaS_基于Ruoyi.md](./开发范式_SaaS_基于Ruoyi.md)       | 文档驱动开发流程、AI Prompt 规范        |
+| [tech_scheme.md](./tech_scheme.md)                   | Architect Sage 框架与 skills 说明 |
+| [RuoYi-Vue 官方文档](http://doc.ruoyi.vip)               | 若依框架使用说明                     |
+
 
 ---
 
@@ -217,10 +256,10 @@ npm run dev
 
 欢迎通过 Issue 与 Pull Request 参与：
 
-1. Fork 本仓库  
-2. 创建特性分支（`git checkout -b feature/xxx`）  
-3. 提交变更并确保通过本地构建  
-4. 发起 Pull Request，说明变更范围与测试情况  
+1. Fork 本仓库
+2. 创建特性分支（`git checkout -b feature/xxx`）
+3. 提交变更并确保通过本地构建
+4. 发起 Pull Request，说明变更范围与测试情况
 
 提交前请阅读 [开发范式_SaaS_基于Ruoyi.md](./开发范式_SaaS_基于Ruoyi.md)，保持 API 契约与设计文档一致。
 
@@ -228,12 +267,10 @@ npm run dev
 
 ## 相关链接
 
-- **GitHub 仓库**：https://github.com/GZXchina/Desktop-terminal-assistant  
-- **若依官网**：http://ruoyi.vip  
-- **UniApp 文档**：https://uniapp.dcloud.net.cn/
+- **GitHub 仓库**：[https://github.com/GZXchina/Desktop-terminal-assistant](https://github.com/GZXchina/Desktop-terminal-assistant)  
+- **若依官网**：[http://ruoyi.vip](http://ruoyi.vip)  
+- **UniApp 文档**：[https://uniapp.dcloud.net.cn/](https://uniapp.dcloud.net.cn/)
 
 ---
 
-<p align="center">
-  <sub>工位搭子 —— 不是智能音箱，而是懂你的桌面搭子</sub>
-</p>
+工位搭子 —— 不是智能音箱，而是懂你的桌面搭子

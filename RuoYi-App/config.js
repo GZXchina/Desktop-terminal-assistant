@@ -1,11 +1,13 @@
 // 应用全局配置
 module.exports = {
+    // 演示模式：免登录体验业务页面（无需启动后端）
+    demoMode: true,
     baseUrl: 'http://192.168.71.7:8080', // 修改为后端API地址
     // baseUrl: 'http://192.168.1.131:8080', 
     // 应用信息
     appInfo: {
         // 应用名称
-        name: "ruoyi-app",
+        name: "工位搭子",
         // 应用版本
         version: "1.2.0",
         // 应用logo

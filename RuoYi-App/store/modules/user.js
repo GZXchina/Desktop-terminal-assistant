@@ -89,6 +89,19 @@ const user = {
       })
     },
 
+    // 演示模式登录（无需后端）
+    DemoLogin({ commit }) {
+      const token = 'demo-token'
+      setToken(token)
+      commit('SET_TOKEN', token)
+      commit('SET_ID', 'demo')
+      commit('SET_NAME', '演示用户')
+      commit('SET_AVATAR', defAva)
+      commit('SET_ROLES', ['ROLE_DEFAULT'])
+      commit('SET_PERMISSIONS', ['*:*:*'])
+      return Promise.resolve()
+    },
+
     // 退出系统
     LogOut({ commit, state }) {
       return new Promise((resolve, reject) => {

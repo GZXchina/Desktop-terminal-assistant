@@ -3,7 +3,7 @@
     <view class="logo-content align-center justify-center flex">
       <image style="width: 100rpx;height: 100rpx;" :src="globalConfig.appInfo.logo" mode="widthFix">
       </image>
-      <text class="title">若依移动端登录</text>
+      <text class="title">工位搭子</text>
     </view>
     <view class="login-form-content">
       <view class="input-item flex align-center">
@@ -24,6 +24,9 @@
       <view class="action-btn">
         <button @click="handleLogin" class="login-btn cu-btn block bg-blue lg round">登录</button>
       </view>
+      <view class="action-btn" v-if="demoMode">
+        <button @click="handleDemoLogin" class="demo-btn cu-btn block lg round">体验 Demo（免后端）</button>
+      </view>
       <view class="reg text-center" v-if="register">
         <text class="text-grey1">没有账号？</text>
         <text @click="handleUserRegister" class="text-blue">立即注册</text>
@@ -40,10 +43,12 @@
 
 <script>
   import { getCodeImg } from '@/api/login'
+  import config from '@/config'
 
   export default {
     data() {
       return {
+        demoMode: config.demoMode,
         codeUrl: "",
         captchaEnabled: true,
         // 用户注册开关
@@ -58,7 +63,11 @@
       }
     },
     created() {
-      this.getCode()
+      if (this.demoMode) {
+        this.captchaEnabled = false
+      } else {
+        this.getCode()
+      }
     },
     methods: {
       // 用户注册
@@ -113,6 +122,13 @@
       loginSuccess(result) {
         // 设置用户信息
         this.$store.dispatch('GetInfo').then(res => {
+          this.$tab.reLaunch('/pages/index')
+        })
+      },
+      handleDemoLogin() {
+        this.$modal.loading('进入演示模式...')
+        this.$store.dispatch('DemoLogin').then(() => {
+          this.$modal.closeLoading()
           this.$tab.reLaunch('/pages/index')
         })
       }
@@ -174,6 +190,14 @@
       .login-btn {
         margin-top: 40px;
         height: 45px;
+      }
+
+      .demo-btn {
+        margin-top: 16px;
+        height: 45px;
+        background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        color: #fff;
+        border: none;
       }
       
       .reg {

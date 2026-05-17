@@ -1,4 +1,5 @@
 import { getToken } from '@/utils/auth'
+import config from '@/config'
 
 // 登录页面
 const loginPage = "/pages/login"
@@ -19,6 +20,9 @@ let list = ["navigateTo", "redirectTo", "reLaunch", "switchTab"]
 list.forEach(item => {
   uni.addInterceptor(item, {
     invoke(to) {
+      if (config.demoMode) {
+        return true
+      }
       if (getToken()) {
         if (to.url === loginPage) {
           uni.reLaunch({ url: "/" })
