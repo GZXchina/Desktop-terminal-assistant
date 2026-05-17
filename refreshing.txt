@@ -1,0 +1,3 @@
+﻿20260421 Create .trae\rules 目录 部署 AI 规则基座
+20260421 Add .trae\rules\project_rules.md 建立角色与技能库的映射关系
+20260421 Create tech_scheme.md 记录 AI 架构设计方案

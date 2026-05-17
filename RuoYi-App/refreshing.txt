@@ -1,0 +1,21 @@
+﻿20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\uni.scss 全局主题变量 配置极客蓝、治愈绿、琥珀色主题
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\static\scss\global.scss 全局样式 添加毛玻璃效果、微渐变、圆角设计
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages.json 页面配置 更新 tabBar 和导航栏样式
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\api\dashboard.js Dashboard API 接口文件 定义看板数据接口
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\dashboard\index.vue Dashboard 首页看板 包含实时状态、健康仪表盘、情绪曲线、AI伙伴
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages.json 页面配置 添加 dashboard 路由并更新 tabBar
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\api\device.js 设备管理 API 接口文件 定义设备控制接口
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\device\console.vue 设备控制台页面 虚拟摇杆、模式切换、关怀设置、音色调节
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages.json 页面配置 添加设备控制台路由
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\work\index.vue 工作台页面 添加设备控制台入口卡片
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\api\memory.js 记忆管理 API 接口文件 定义记忆 CRUD 接口
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\memory\timeline.vue 记忆时间轴页面 四维标签、语义搜索、粉碎动画
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages.json 页面配置 添加记忆时光路由
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\work\index.vue 工作台页面 添加记忆时光入口卡片
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\api\enterprise.js 企业报表 API 接口文件 定义团队数据与关怀接口
+20260506 新增 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\enterprise\report.vue 企业报表页面 团队概览、热力图、关怀下发
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages.json 页面配置 添加企业报表路由
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\work\index.vue 工作台页面 添加企业报表入口卡片
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\index.vue 首页内容 替换为 Dashboard 看板，解决主页空白问题
+20260506 修改 c:\Users\DK\Desktop\桌面终端助理\RuoYi-App\pages\index.vue 首页重构 设计为工位搭子云端中枢导航门户，2x2卡片网格
+20260507 修改 pages/index.vue 修复主页跳转到状态监测页面异常问题
